@@ -9,7 +9,7 @@ Answer the following questions <br>
 - JTAG, Chip-Off시 BitFlip 현상 발생
   > F/S 메타 데이타 손상 가능
 - 256G 아이폰의 Full File System을 가져오니 4TB
-  > hard link된 동일한 파일 복제
+  > hard link된 파일 복제
 
 ## File System
 The **structure and logic rule** used to manage the groups of information and their names
@@ -35,8 +35,25 @@ The **structure and logic rule** used to manage the groups of information and th
   - iNode table : 데이터 정보(파일/디렉토리, MAC시간, 크기, 이름, 위치)
   - Data Block
 
+* 저널 : 파일시스템의 변경을 저장하고 있는 파일시스템의 영역 [[wiki]](https://en.wikipedia.org/wiki/Journaling_file_system)
+  - 메타 데이터 or 파일 데이터
+  - circular queue
+  - 파일시스템 장애복원 및 성능향상
+* soft(symbolic) link : 원본에 대한 경로(독립된 iNode)
+* hard link : 원본(iNode 공유, reference count++)
+
 ### File System Restore
+Block의 메타데이터를 읽고 iNode table 상의 모든 파일 구조를 추적함. <br>
+활성화된 파일과 삭제된 파일을 확인함. <br>
+BitMap과 각 할당 파일을 교차검증함. <br>
 
 ### Mobile File System
+FAT 12/16/32 파일시스템 복원 : SD 카드에서 사용, cluster chain <br>
+Ext 3 : Linux kernel, FFS(Fast File System - 하드디스크 물리적주소와 최적화), block indirect pointer로 데이터 표현
+Ext 4 : extent(start,size)롷 데이터 표현
+HFS+
+f2fs : NAND Flash에 최적화, indirect block pointer로 회귀
+exFAT : SD카드, no TRIM, fat chain(recording) + extent(image)
 
 ### Virtual File System
+서로 다른 파일 시스템에 대해 사용자에게 동일한 인터페이스를 제공하는 모듈
