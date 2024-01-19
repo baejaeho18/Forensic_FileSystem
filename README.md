@@ -57,3 +57,9 @@ exFAT : SD카드, no TRIM, fat chain(recording) + extent(image) <br>
 
 ### Virtual File System
 서로 다른 파일 시스템에 대해 사용자에게 동일한 인터페이스를 제공하는 모듈
+
+## FAT
+File Allocation Table <br>
+구조가 간단하여 일반 시스템 외에도 이동식 저장장치에서 사용 <br>
+파일시스템 복원 : dump 이미지로부터 파일 구조를 파악 <br>
+
