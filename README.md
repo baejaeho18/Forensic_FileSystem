@@ -1,5 +1,5 @@
 # Forensic_FileSystem
-저수준 파일 시스템 구조 분석 (GMDsoft)
+저수준 파일 시스템 구조 분석 (GMDsoft) <br>
 GMDsoft <br>
 Cellebrite <br>
 
@@ -48,12 +48,12 @@ Block의 메타데이터를 읽고 iNode table 상의 모든 파일 구조를 �
 BitMap과 각 할당 파일을 교차검증함. <br>
 
 ### Mobile File System
-FAT 12/16/32 파일시스템 복원 : SD 카드에서 사용, cluster chain <br>
-Ext 3 : Linux kernel, FFS(Fast File System - 하드디스크 물리적주소와 최적화), block indirect pointer로 데이터 표현
-Ext 4 : extent(start,size)롷 데이터 표현
-HFS+
-f2fs : NAND Flash에 최적화, indirect block pointer로 회귀
-exFAT : SD카드, no TRIM, fat chain(recording) + extent(image)
+FAT 12/16/32 파일시스템 복원 : SD 카드에서 사용, cluster chain <br> 
+Ext 3 : Linux kernel, FFS(Fast File System - 하드디스크 물리적주소와 최적화), block indirect pointer로 데이터 표현 <br>
+Ext 4 : extent(start,size)롷 데이터 표현 <br> 
+HFS+ <br>
+f2fs : NAND Flash에 최적화, indirect block pointer로 회귀 <br>
+exFAT : SD카드, no TRIM, fat chain(recording) + extent(image) <br>
 
 ### Virtual File System
 서로 다른 파일 시스템에 대해 사용자에게 동일한 인터페이스를 제공하는 모듈
